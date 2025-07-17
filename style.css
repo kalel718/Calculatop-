@@ -1,0 +1,124 @@
+/* Import Google Fonts - gives us the Poppins font family */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Reset all default browser styles and set font for everything */
+* {
+   margin: 0;           /* Remove default spacing */
+   padding: 0;          /* Remove default padding */
+   box-sizing: border-box;  /* Makes width/height calculations easier */
+   font-family: 'Poppins', sans-serif;  /* Use our imported font */
+}
+
+/* Style the entire page background and center the calculator */
+body {
+  display: flex;               /* Use flexbox for centering */
+  justify-content: center;     /* Center horizontally */
+  align-items: center;         /* Center vertically */
+  min-height: 100vh;           /* Full viewport height */
+  background: linear-gradient(45deg, #0a0a0a, #3a4452);  /* Dark gradient background */
+}
+
+/* Main calculator container - the "box" that holds everything */
+.calculator {
+  width: 375px;                /* Fixed width */
+  padding: 30px;               /* Space inside the calculator */
+  border-radius: 10px;         /* Rounded corners */
+  box-shadow: 0 0 15px rgba(255, 255, 255, .2);  /* Subtle white glow effect */
+}
+
+/* Display area - where numbers and results show */
+.display {
+  position: relative;          /* Allows absolute positioning of child elements */
+  margin: 30px 0 40px;         /* Space above and below display */
+}
+
+/* Style both input fields in the display */
+.display input {
+  width: 100%;                 /* Full width of display area */
+  height: 50px;                /* Fixed height */
+  background: transparent;     /* No background color */
+  border: none;                /* Remove default border */
+  font-size: 35px;             /* Large text for readability */
+  color: #fff;                 /* White text */
+  text-align: right;           /* Numbers align to the right (like real calculators) */
+  pointer-events: none;        /* User can't click/edit these fields */
+}
+
+/* Style the placeholder text (the "0" that shows when empty) */
+.display .display-input::placeholder {
+  color: #fff;                 /* White placeholder text */
+}
+
+/* Position the result display (smaller text showing the answer) */
+.display .display-result {
+  position: absolute;          /* Position relative to .display */
+  left: 0;                     /* Start from left edge */
+  font-size: 15px;             /* Smaller than main input */
+  transform: translateX(65%);  /* Move it to the right */
+}
+
+/* Button grid layout - creates our 4-column calculator layout */
+.buttons {
+  display: grid;                        /* Use CSS Grid */
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px;                           /* Space between buttons */
+}
+
+/* Style all calculator buttons */
+.buttons button {
+  padding: 15px;               /* Space inside each button */
+  background: transparent;     /* No background color */
+  border-radius: 10px;         /* Rounded button corners */
+  border: none;                /* Remove default button border */
+  font-size: 20px;             /* Button text size */
+  color: #fff;                 /* White text */
+  cursor: pointer;             /* Show hand cursor on hover */
+  /* Create a "pressed in" shadow effect */
+  box-shadow: -3px -3px 15px rgba(255,255,255, .1), 3px 3px 15px rgba(0, 0, 0, .6);
+}
+
+/* Special styling for operator buttons (AC, +, -, etc.) */
+.buttons .operator {
+  position: relative;          /* Allows absolute positioning of spans inside */
+  color: #0ef;                 /* Cyan color for operators */
+}
+
+/* Style the symbols inside operator buttons */
+.buttons .operator span {
+  position: absolute;          /* Position relative to button */
+  left: 50%;                   /* Center horizontally */
+  top: 50%;                    /* Center vertically */
+  transform: translate(-50%, -50%);  /* Perfect centering */
+  font-size: 25px;             /* Larger than regular button text */
+}
+
+/* Special styling for the backspace button */
+.buttons .operator.backspace span {
+  display: flex;               /* Use flexbox for alignment */
+  align-items: center;         /* Center content vertically */
+  width: 22px;                 /* Fixed width */
+  height: 20px;                /* Fixed height */
+  border: 2px solid #0ef;      /* Cyan border */
+  border-left-color: transparent;  /* Hide left border */
+  transform: translate(-35%, -50%) scale(.9);  /* Position and scale */
+}
+
+/* Create the arrow part of backspace button (left pointing triangle) */
+.buttons .operator.backspace span::before {
+  content: '';                 /* Empty content (just for styling) */
+  position: absolute;          /* Position relative to span */
+  left: -8px;                  /* Move left to create arrow */
+  width: 12px;                 /* Arrow width */
+  height: 12px;                /* Arrow height */
+  border-left: 2px solid #0ef; /* Left border of arrow */
+  border-bottom: 2px solid #0ef; /* Bottom border of arrow */
+  transform: rotate(45deg);    /* Rotate to create arrow shape */
+}
+
+/* Add the "x" symbol inside backspace button */
+.buttons .operator.backspace span::after {
+  content: 'x';                /* The "x" character */
+  padding-left: 5px;           /* Space from left edge */
+  font-size: 12px;             /* Smaller font */
+  line-height: 2;              /* Vertical spacing */
+}

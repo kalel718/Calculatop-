@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <!-- This links our CSS file to style our calculator -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- Main container that holds our entire calculator -->
+    <div class="calculator">
+
+      <!-- Display section - shows what user types and the result -->
+      <div class="display">
+        <!-- Input field - shows the numbers/operators user clicks -->
+        <input type="text" class="display-input" placeholder="0">
+        <!-- Result field - shows the calculated answer -->
+        <input type="text" class="display-result">
+      </div>
+
+      <!-- Button grid - contains all our calculator buttons -->
+      <div class="buttons">
+        <!-- Row 1: Clear, Parentheses, Percent, Division -->
+        <button class="operator">AC</button>              <!-- All Clear - resets calculator -->
+        <button class="operator">( )</button>             <!-- Parentheses toggle -->
+        <button class="operator">%</button>               <!-- Percentage -->
+        <button class="operator"><span>&divide;</span></button> <!-- Division symbol ÷ -->
+
+        <!-- Row 2: Numbers 7, 8, 9 and Multiplication -->
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator"><span>&times;</span></button>  <!-- Multiplication symbol × -->
+
+        <!-- Row 3: Numbers 4, 5, 6 and Subtraction -->
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator"><span>-</span></button>        <!-- Minus sign -->
+
+        <!-- Row 4: Numbers 1, 2, 3 and Addition -->
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="operator"><span>+</span></button>        <!-- Plus sign -->
+
+        <!-- Row 5: Zero, Decimal, Backspace, Equals -->
+        <button>0</button>
+        <button>.</button>                                      <!-- Decimal point -->
+        <button class="operator backspace"><span></span></button> <!-- Backspace (styled with CSS) -->
+        <button class="operator"><span>=</span></button>        <!-- Equals - calculates result -->
+      </div>
+    </div>
+
+    <!-- This loads our JavaScript file to make buttons work -->
+    <script src="script.js"></script>
+  </body>
+</html>
