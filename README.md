@@ -26,3 +26,9 @@ A sleek, modern calculator built with HTML, CSS, and JavaScript featuring a dark
 4. Use AC to clear, backspace to delete, and = to calculate
 
 Perfect for learning web development fundamentals and understanding how HTML, CSS, and JavaScript work together!
+
+
+
+
+
+<img width="759" height="693" alt="Image" src="https://github.com/user-attachments/assets/aedcfddd-833a-414a-8c49-b7779937662d" />
