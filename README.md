@@ -27,7 +27,9 @@ A sleek, modern calculator built with HTML, CSS, and JavaScript featuring a dark
 
 Perfect for learning web development fundamentals and understanding how HTML, CSS, and JavaScript work together!
 
+## 📸 Preview
 
+https://calculator-mk-project1.netlify.app/
 
 
 
